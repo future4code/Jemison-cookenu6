@@ -1,0 +1,51 @@
+POST http://localhost:3003/user/signup
+Content-Type: application/json
+
+{
+	"name": "Alice",
+	"email": "alice@lbn.com",
+	"password": "123456",
+	"role":  "ADMIN"
+}
+
+###
+POST http://localhost:3003/user/login
+Content-Type: application/json
+
+{
+	"email": "alice@lbn.com",
+	"password": "123456"
+}
+
+###
+POST http://localhost:3003/recipes/create
+Content-Type: application/json
+
+Authorization:
+
+{
+	"title": "título da receita",
+	"description": "descrição da receita"
+}
+
+###
+GET  http://localhost:3003/user/profile
+Content-Type: application/json
+
+Authorization: 
+
+###
+GET  http://localhost:3003/user/:id
+Content-Type: application/json
+
+Authorization:
+
+id: 
+
+###
+GET  http://localhost:3003/recipes/:id
+Content-Type: application/json
+
+Authorization: 
+
+id: 
