@@ -11,7 +11,7 @@ export async function getRecipesById(req: Request, res: Response) {
     const id = req.params.id 
 
     if (!id) {
-      throw new InvalidError("Falta passar o Id");
+      throw new InvalidError("Falta passar o Id!");
     }
 
     if (!token) {

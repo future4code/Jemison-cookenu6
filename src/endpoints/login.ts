@@ -2,7 +2,9 @@ import { Request, Response } from "express";
 import { UserDatabase } from "../data/UserDatabase";
 import Authenticator, { authenticatorData } from "../services/Authenticator";
 import { InformationError } from "../error/InformationError";
+import { User } from "../model/User";
 import { HashManager } from "../services/HashManager";
+import GenerateId from "../services/GenerateId";
 
 export async function login(req: Request, res: Response) {
   try {

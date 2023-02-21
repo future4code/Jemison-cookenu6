@@ -1,5 +1,6 @@
-import { User, UserDB } from "../model/User";
 import { BaseDatabase } from "./BaseDatabase";
+import { User, UserDB } from "../model/User";
+import { deleteUser } from "../endpoints/deleteUser";
 
 export class UserDatabase extends BaseDatabase {
   public createUser = async (user: User): Promise<void> => {
@@ -37,4 +38,10 @@ export class UserDatabase extends BaseDatabase {
 
     return result[0];
   }
+  public async deleteUser(id: string) {
+        await this.getConnection()
+            .delete()
+            .from("users_cookenu")
+            .where({ id })
+    }
 }
