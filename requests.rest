@@ -49,3 +49,12 @@ Content-Type: application/json
 Authorization: 
 
 id: 
+###
+DELETE http://localhost:3003/user/delete/:id
+
+Authorization: 
+
+###
+DELETE http://localhost:3003/recipes/delete/:id
+
+Authorization: 

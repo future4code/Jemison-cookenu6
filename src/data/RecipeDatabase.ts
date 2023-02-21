@@ -1,5 +1,6 @@
 import Recipes, { RecipesDB } from "../model/Recipes";
 import { BaseDatabase } from "./BaseDatabase";
+import { deleteRecipes } from "../endpoints/deleteRecipes"
 
 export class RecipeDatabase extends BaseDatabase {
   public createRecipes = async (recipes: Recipes): Promise<void> => {
@@ -26,6 +27,16 @@ export class RecipeDatabase extends BaseDatabase {
   };
 
   public async getAnotherProfile(id: string) {
-    await this.getConnection().select("*").from("users_cookenu").where({ id });
+    await this.getConnection()
+    .select("*")
+    .from("users_cookenu")
+    .where({ id });
   }
+
+  public async deleteRecipes(id: string) {
+        await this.getConnection()
+            .delete()
+            .from("recipes_cookenu")
+            .where({ id })
+    }
 }
